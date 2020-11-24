@@ -1,0 +1,52 @@
+<odoo>
+
+<record id="upotussam_parada_form_view" model="ir.ui.view">
+    <field name="name">upotussam.parada.form</field>
+    <field name="model">upotussam.parada</field>
+    <field name="arch" type="xml">
+      <form string="parada">
+        <sheet layout="auto">
+          <group>
+            <field name="ID Parada" />
+            <field name="Ubicación" />
+            <field name="Esta Activo" />
+            <field name="id_paradaPorLinea" widget="one2many">
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upotussam_parada_tree_view" model="ir.ui.view">
+    <field name="name">upotussam.parada.tree</field>
+    <field name="model">upotussam.parada</field>
+    <field name="arch" type="xml">
+      <form string="parada">
+        <sheet layout="auto">
+          <group>
+            <field name="Precio por Parada" />
+            <field name="id_parada" widget="many2one">
+            <field name="id_boleto" widget="many2one">
+            <field name="id_boleto" widget="many2one">
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="paradas_list_action" model="ir.actions.act_window">
+    <field name="name">Paradas</field>
+    <field name="res_model">upotussam.paradas</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first class</p>
+    </field>
+  </record>
+<!-- Top menu item -->
+  <menuitem name="UPOTUSSAM" id="main_UPOTUSSAM_menu" groups="group_UPOTUSSAM_manager"/>
+
+  <!-- menu categories -->
+  <menuitem name="UPOTUSSAM" id="UPOTUSSAM_menu" groups="group_UPOTUSSAM_manager" parent="main_UPOTUSSAM_menu"/>
+<!-- actions -->
+  <menuitem name="paradas" id="paradas_menu" parent="UPOTUSSAM_menu" groups="group_UPOTUSSAM_manager" action="paradas_list_action"/>
+</odoo>

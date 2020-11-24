@@ -1,0 +1,52 @@
+<odoo>
+
+<record id="upotussam_paradaPorLinea_form_view" model="ir.ui.view">
+    <field name="name">upotussam.paradaPorLinea.form</field>
+    <field name="model">upotussam.paradaPorLinea</field>
+    <field name="arch" type="xml">
+      <form string="paradaPorLinea">
+        <sheet layout="auto">
+          <group>
+            <field name="Precio por Parada" />
+            <field name="id_parada" widget="many2one">
+            <field name="id_boleto" widget="many2one">
+            <field name="id_boleto" widget="many2one">
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upotussam_paradaPorLinea_tree_view" model="ir.ui.view">
+    <field name="name">upotussam.paradaPorLinea.tree</field>
+    <field name="model">upotussam.paradaPorLinea</field>
+    <field name="arch" type="xml">
+      <form string="paradaPorLinea">
+        <sheet layout="auto">
+          <group>
+            <field name="Precio por Parada" />
+            <field name="id_parada" widget="many2one">
+            <field name="id_boleto" widget="many2one">
+            <field name="id_boleto" widget="many2one">
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="paradaPorLinea_list_action" model="ir.actions.act_window">
+    <field name="name">Parada Por Linea</field>
+    <field name="res_model">upotussam.paradaPorLinea</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first class</p>
+    </field>
+  </record>
+<!-- Top menu item -->
+  <menuitem name="UPOTUSSAM" id="main_UPOTUSSAM_menu" groups="group_UPOTUSSAM_manager"/>
+
+  <!-- menu categories -->
+  <menuitem name="UPOTUSSAM" id="UPOTUSSAM_menu" groups="group_UPOTUSSAM_manager" parent="main_UPOTUSSAM_menu"/>
+<!-- actions -->
+  <menuitem name="paradaPorLinea" id="paradaPorLinea_menu" parent="UPOTUSSAM_menu" groups="group_UPOTUSSAM_manager" action="paradaPorLinea_list_action"/>
+</odoo>

@@ -1,0 +1,48 @@
+<odoo>
+
+<record id="upotussam_nomina_form_view" model="ir.ui.view">
+    <field name="name">upotussam.nomina.form</field>
+    <field name="model">upotussam.nomina</field>
+    <field name="arch" type="xml">
+      <form string="nomina">
+        <sheet layout="auto">
+          <group>
+            <field name="Sueldo" />
+            <field name="id_conductor" widget="one2many">
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upotussam_nomina_tree_view" model="ir.ui.view">
+    <field name="name">upotussam.nomina.tree</field>
+    <field name="model">upotussam.nomina</field>
+    <field name="arch" type="xml">
+      <form string="nomina">
+        <sheet layout="auto">
+          <group>
+            <field name="Sueldo" />
+            <field name="id_conductor" widget="one2many">
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="nomina_list_action" model="ir.actions.act_window">
+    <field name="name">Nomina</field>
+    <field name="res_model">upotussam.nomina</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first class</p>
+    </field>
+  </record>
+<!-- Top menu item -->
+  <menuitem name="UPOTUSSAM" id="main_UPOTUSSAM_menu" groups="group_UPOTUSSAM_manager"/>
+
+  <!-- menu categories -->
+  <menuitem name="UPOTUSSAM" id="UPOTUSSAM_menu" groups="group_UPOTUSSAM_manager" parent="main_UPOTUSSAM_menu"/>
+<!-- actions -->
+  <menuitem name="nomina" id="nomina_menu" parent="UPOTUSSAM_menu" groups="group_UPOTUSSAM_manager" action="nomina_list_action"/>
+</odoo>

@@ -1,0 +1,54 @@
+<odoo>
+
+<record id="upotussam_conductor_form_view" model="ir.ui.view">
+    <field name="name">upotussam.conductor.form</field>
+    <field name="model">upotussam.conductor</field>
+    <field name="arch" type="xml">
+      <form string="conductor">
+        <sheet layout="auto">
+          <group>
+            <field name="Nombre" />
+            <field name="DNI" />
+            <field name="Fecha Nacimiento" />
+            <field name="id_nomina" widget="many2one" />
+            <field name="id_autobusLinea" widget="many2one"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upotussam_conductor_tree_view" model="ir.ui.view">
+    <field name="name">upotussam.conductor.tree</field>
+    <field name="model">upotussam.conductor</field>
+    <field name="arch" type="xml">
+      <form string="conductor">
+        <sheet layout="auto">
+          <group>
+            <field name="Nombre" />
+            <field name="DNI" />
+            <field name="Fecha Nacimiento" />
+            <field name="id_nomina" widget="many2one" />
+            <field name="id_autobusLinea" widget="many2one"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="conductor_list_action" model="ir.actions.act_window">
+    <field name="name">Conductor</field>
+    <field name="res_model">upotussam.conductor</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first class</p>
+    </field>
+  </record>
+<!-- Top menu item -->
+  <menuitem name="UPOTUSSAM" id="main_UPOTUSSAM_menu" groups="group_UPOTUSSAM_manager"/>
+
+  <!-- menu categories -->
+  <menuitem name="UPOTUSSAM" id="UPOTUSSAM_menu" groups="group_UPOTUSSAM_manager" parent="main_UPOTUSSAM_menu"/>
+<!-- actions -->
+  <menuitem name="conductor" id="conductor_menu" parent="UPOTUSSAM_menu" groups="group_UPOTUSSAM_manager" action="conductor_list_action"/>
+</odoo>

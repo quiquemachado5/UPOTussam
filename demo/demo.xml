@@ -1,0 +1,92 @@
+<odoo>
+   <record id="autobus1" model="upotussam.autobus">
+    <field name="modelo">Mercedes</field>
+    <field name="matricula">1234BZJ</field>
+    <field name="capacidad">50</field>
+    <field name="estaAdaptado">Falso</field>
+  </record>
+
+  <record id="autobus2" model="upotussam.autobus">
+    <field name="modelo">Lamborghini</field>
+    <field name="matricula">4321BZJ</field>
+    <field name="capacidad">100</field>
+    <field name="estaAdaptado">Verdadero</field>
+  </record>
+
+  <record id="autobusLinea1"model="upotussam.autobusLinea">
+    <field name="fecha">03/11/2020</field>
+  </record>
+
+  <record id="boleto1" model="upotussam.boletos">
+    <field name="id_boleto">64568910</field>
+    <field name="precio">1,40</field>
+    <field name="fecha">03/11/2020</field>
+    <field name="realizaDescuento">Verdadero</field>
+  </record>
+  
+  <record id="boleto2" model="upotussam.boletos">
+    <field name="id_boleto">90804523</field>
+    <field name="precio">1,40</field>
+    <field name="fecha">08/11/2020</field>
+    <field name="realizaDescuento">Falso</field>
+  </record>
+
+  <record id="conductor1" model="upotussam.conductor">
+    <field name="nombre">Aurelio Manzano</field>
+    <field name="dni">123456789Z</field>
+    <field name="fechaNacimiento">23/09/1950</field>
+    <field name="sueldo">100000</field>
+  </record>
+  
+  <record id="conductor2" model="upotussam.conductor">
+    <field name="nombre">Luis Fabiano</field>
+    <field name="dni">123456789X</field>
+    <field name="fechaNacimiento">14/02/2000</field>
+    <field name="sueldo">2500</field>
+  </record>
+
+  <record id="linea1" model="upotussam.lineas">
+    <field name="id_linea">C2</field>
+  </record>
+  
+  <record id="linea2" model="upotussam.lineas">
+    <field name="id_linea">27</field>
+  </record>
+  
+  <record id="paradaPorLinea1" model="upotussam.paradaPorLinea">
+    <field name="precioParada">7</field>
+  </record>
+
+  <record id="paradaPorLinea2" model="upotussam.paradaPorLinea">
+    <field name="precioParada">1</field>
+  </record>
+  
+  <record id="parada1" model="upotussam.paradas">
+    <field name="id_parada">257</field>
+    <field name="ubicacion">Calle Arroyo</field>
+    <field name="estaActivo">Falso</field>
+  </record>
+
+  <record id="parada2" model="upotussam.paradas">
+    <field name="id_parada">789</field>
+    <field name="ubicacion">Plaza la Campana</field>
+    <field name="estaActivo">Verdadero</field>
+  </record>
+
+  <record id="pasajero1" model="upotussam.pasajeros">
+    <field name="nombre">Enrique Machado</field>
+    <field name="dni">999666333V</field>
+    <field name="fechaNacimiento">06/07/1978</field>
+    <field name="esMinusvalido">Falso</field>
+    <field name="esEstudiante">Verdadero</field>
+  </record>
+
+  <record id="pasajero2" model="upotussam.pasajeros">
+    <field name="nombre">Julen Lopetegui</field>
+    <field name="dni">976123454</field>
+    <field name="fechaNacimiento">14/10/1905</field>
+    <field name="esMinusvalido">Falso</field>
+    <field name="esEstudiante">Falso</field>
+  </record>
+  
+</odoo>
